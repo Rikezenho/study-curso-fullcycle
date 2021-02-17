@@ -20,6 +20,7 @@ RUN rm -rf /var/www/html
 # copia do build anterior e atribui permissões
 COPY --from=builder /var/www/laravel .
 RUN chown -R www-data:www-data /var/www
+RUN ln -s public html
 
 EXPOSE 9000
 

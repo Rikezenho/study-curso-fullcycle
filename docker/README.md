@@ -1,3 +1,7 @@
+# Docker
+
+## Dockerfiles
+
 * Built images:
 ```sh
 > cd docker/laravel
@@ -13,4 +17,13 @@
 ```sh
 > docker run -d --network laranet --name laravel kuwai/laravel:prod
 > docker run -d --network laranet --name nginx -p 8080:80 kuwai/nginx:prod
+```
+
+## Docker Compose
+
+```
+# laravel
+> docker-compose -f docker-compose.laravel.yaml up -d
+# node + db
+> docker-compose up -d
 ```

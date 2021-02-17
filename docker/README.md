@@ -29,3 +29,14 @@
 ```
 
 When Dockerfile changes, pass `--build` flag on `docker-compose up`.
+
+### MySQL
+```
+# enter container
+> docker exec -it db bash
+# create table
+> mysql -uroot -p
+> root
+> use nodedb;
+> create table people(id serial, name varchar(255), primary key(id));
+```

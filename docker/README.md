@@ -27,3 +27,5 @@
 # node + db
 > docker-compose up -d
 ```
+
+When Dockerfile changes, pass `--build` flag on `docker-compose up`.

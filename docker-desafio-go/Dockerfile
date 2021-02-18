@@ -5,7 +5,7 @@ COPY . .
 
 RUN go get -d -v ./...
 RUN go install -v ./...
-RUN go build -o /go/src/app/hello
+RUN go build -ldflags "-s -w" -o /go/src/app/hello
 
 FROM scratch
 COPY --from=builder /go/src/app/hello /hello

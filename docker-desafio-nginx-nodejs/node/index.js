@@ -23,8 +23,11 @@ const doMysqlQuery = (sql) => new Promise((resolve, reject) => {
 });
 
 app.get('/', async (req, res) => {
-    const [aluno] = await doMysqlQuery(`SELECT name FROM aluno`);
-    res.send(`<h1>Full cycle</h1><p>Nome do aluno: ${aluno.name}</p>`);
+    const result = await doMysqlQuery(`SELECT name FROM aluno`);
+    const names = result ? (result || []).map(({ name }) => `<li>${name}</li>`).join('') : null;
+    res.send(`<h1>Full Cycle Rocks!</h1>${
+        `<h2>Alunos</h2><ul>${names}</ul>` || ''
+    }`);
 });
 
 app.listen(port, () => {

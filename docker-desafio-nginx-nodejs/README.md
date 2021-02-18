@@ -1,6 +1,6 @@
 # Desafio - Docker - Node.js + Nginx
 
-Nginx como proxy reverso da porta 8080 para a 3000 (servidor Express).
+Nginx como proxy reverso da porta 8080 para a 3000 (servidor Express). O banco já é startado com uma migration com a tabela `aluno`, inserindo uma única linha com o `name`: `Henrique Kuwai`.
 
 ## Getting started
 - Rode o `docker-compose.yaml` com o comando:
